@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nebula/navigation/bloc/navigation_bloc.dart';
+import 'package:nebula/settings/settings_page.dart';
 
 class DestinationPage {
   const DestinationPage(this.label, this.icon, this.selectedIcon);
@@ -10,16 +11,12 @@ class DestinationPage {
   final Widget selectedIcon;
 }
 
-const List<DestinationPage> destinations = <DestinationPage>[
+const List<DestinationPage> drawerDestinations = <DestinationPage>[
   DestinationPage(
     'Home',
     Icon(Icons.home_outlined),
     Icon(Icons.home),
   ),
-];
-
-const List<DestinationPage> bottomBarDestiantions = <DestinationPage>[
-  ...destinations,
   DestinationPage(
     'Settings',
     Icon(Icons.settings_outlined),
@@ -27,9 +24,11 @@ const List<DestinationPage> bottomBarDestiantions = <DestinationPage>[
   ),
 ];
 
-const List<Widget> screens = <Widget>[
+const List<DestinationPage> bottomBarDestiantions = drawerDestinations;
+
+const List<Widget> pages = <Widget>[
   Text('Home'),
-  Text('Settings'),
+  SettingsPage(),
 ];
 
 class Navigation extends StatefulWidget {
@@ -51,18 +50,12 @@ class _NavigationState extends State<Navigation> {
           body: Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: screens[state.screenIndex],
+              child: pages[state.screenIndex],
             ),
           ),
           bottomNavigationBar: NavigationBar(
             selectedIndex: state.screenIndex,
             onDestinationSelected: (int index) {
-              if (index == bottomBarDestiantions.length - 1) {
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(builder: (context) => const SettingsPage()),
-                // );
-                return;
-              }
               context.read<NavigationBloc>().add(NavigationIndexChanged(index));
             },
             destinations: bottomBarDestiantions.map(
@@ -95,7 +88,7 @@ class _NavigationState extends State<Navigation> {
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: NavigationRail(
                     minWidth: 50,
-                    destinations: destinations.map(
+                    destinations: drawerDestinations.map(
                       (destination) {
                         return NavigationRailDestination(
                           label: Text(destination.label),
@@ -149,7 +142,7 @@ class _NavigationState extends State<Navigation> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: screens[state.screenIndex],
+                    child: pages[state.screenIndex],
                   ),
                 ),
               ],
