@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nebula/navigation/bloc/navigation_bloc.dart';
 import 'package:nebula/settings/settings_page.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class DestinationPage {
   const DestinationPage(this.label, this.icon, this.selectedIcon);
@@ -113,17 +114,17 @@ class _NavigationState extends State<Navigation> {
                               child: IconButton(
                                 icon: const Icon(Icons.info),
                                 onPressed: () async {
-                                  // final packageInfo = await PackageInfo.fromPlatform();
-                                  // if (context.mounted) {
-                                  //   showAboutDialog(
-                                  //     context: context,
-                                  //     applicationIcon: const FlutterLogo(),
-                                  //     applicationName: packageInfo.appName,
-                                  //     applicationVersion: packageInfo.version,
-                                  //     applicationLegalese:
-                                  //         '© ${DateTime.now().year} Alessio Bianchetti\nApache-2.0 license',
-                                  //   );
-                                  // }
+                                  final packageInfo = await PackageInfo.fromPlatform();
+                                  if (context.mounted) {
+                                    showAboutDialog(
+                                      context: context,
+                                      applicationIcon: const FlutterLogo(),
+                                      applicationName: packageInfo.appName,
+                                      applicationVersion: packageInfo.version,
+                                      applicationLegalese:
+                                          '© ${DateTime.now().year} Alessio Bianchetti\nApache-2.0 license',
+                                    );
+                                  }
                                 },
                               ),
                             ),
