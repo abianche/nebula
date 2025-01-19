@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nebula/logger.dart';
+
+final logger = getLogger('main');
 
 void main() {
+  logger.i('App started');
   runApp(const MainApp());
 }
 
