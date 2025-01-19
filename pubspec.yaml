@@ -1,5 +1,5 @@
 name: nebula
-description: "A new Flutter project."
+description: "A lightweight, markdown-based note-taking app designed for developers, with local storage and seamless cloud sync options."
 publish_to: "none"
 version: 0.1.0
 
