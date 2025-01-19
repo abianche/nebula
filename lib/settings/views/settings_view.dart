@@ -1,7 +1,8 @@
-import 'package:nebula/models/settings_model.dart';
-import 'package:nebula/settings/bloc/settings_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nebula/models/settings_model.dart';
+import 'package:nebula/settings/bloc/settings_bloc.dart';
+import 'package:nebula/widgets/licenses_list_tile.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -63,11 +64,7 @@ class SettingsView extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 20),
-              Text(
-                'Beta Features',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
+              Divider(),
               SwitchListTile(
                 title: const Text('Enable Beta Features'),
                 value: settings.enableBetaFeatures,
@@ -77,6 +74,8 @@ class SettingsView extends StatelessWidget {
                       );
                 },
               ),
+              Divider(),
+              LicensesListTile(),
             ],
           ),
         );
