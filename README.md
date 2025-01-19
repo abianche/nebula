@@ -1,5 +1,7 @@
 # Nebula
 
+[![Analyze and Test](https://github.com/abianche/nebula/actions/workflows/analyze_and_test.yml/badge.svg)](https://github.com/abianche/nebula/actions/workflows/analyze_and_test.yml)
+
 **Nebula** is a lightweight, markdown-based note-taking app designed for developers. It prioritizes productivity and simplicity, featuring local file system storage and optional cloud sync integration (e.g., Dropbox, Google Drive).
 
 ## Features
