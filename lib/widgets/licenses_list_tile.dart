@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nebula/extensions/extensions.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class LicensesListTile extends StatelessWidget {
@@ -17,7 +18,7 @@ class LicensesListTile extends StatelessWidget {
 
         return AboutListTile(
           applicationIcon: const FlutterLogo(),
-          applicationName: snapshot.data?.appName,
+          applicationName: snapshot.data?.appName.capitalize(),
           applicationVersion: snapshot.data?.version,
           applicationLegalese: '© ${DateTime.now().year} Alessio Bianchetti\nApache-2.0 license',
         );
