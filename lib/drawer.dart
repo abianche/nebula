@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nebula/extensions/extensions.dart';
 import 'package:nebula/navigation/bloc/navigation_bloc.dart';
 import 'package:nebula/settings/settings_page.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -119,7 +120,7 @@ class _NavigationState extends State<Navigation> {
                                     showAboutDialog(
                                       context: context,
                                       applicationIcon: const FlutterLogo(),
-                                      applicationName: packageInfo.appName,
+                                      applicationName: packageInfo.appName.capitalize(),
                                       applicationVersion: packageInfo.version,
                                       applicationLegalese:
                                           '© ${DateTime.now().year} Alessio Bianchetti\nApache-2.0 license',
