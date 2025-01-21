@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nebula/drawer.dart';
 import 'package:nebula/models/settings_model.dart';
 import 'package:nebula/navigation/bloc/navigation_bloc.dart';
+import 'package:nebula/note/bloc/note_bloc.dart';
 import 'package:nebula/settings/bloc/settings_bloc.dart';
 
 class App extends StatelessWidget {
@@ -14,6 +15,7 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => NavigationBloc()),
         BlocProvider(create: (_) => SettingsBloc()),
+        BlocProvider(create: (_) => NoteBloc()),
       ],
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
