@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nebula/extensions/extensions.dart';
 import 'package:nebula/navigation/bloc/navigation_bloc.dart';
+import 'package:nebula/note/views/note_explorer.dart';
 import 'package:nebula/settings/settings_page.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -29,7 +30,7 @@ const List<DestinationPage> drawerDestinations = <DestinationPage>[
 const List<DestinationPage> bottomBarDestiantions = drawerDestinations;
 
 const List<Widget> pages = <Widget>[
-  Text('Home'),
+  NoteExplorer(),
   SettingsPage(),
 ];
 
