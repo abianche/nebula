@@ -8,7 +8,7 @@ class NoteExplorer extends StatelessWidget {
 
   Future<void> _pickDirectory(BuildContext context) async {
     final directoryPath = await getDirectoryPath(confirmButtonText: 'Select Directory');
-    if (directoryPath != null) {
+    if (directoryPath != null && context.mounted) {
       context.read<NoteBloc>().add(LoadNotes(directoryPath));
     }
   }
