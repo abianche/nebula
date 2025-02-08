@@ -78,7 +78,7 @@ This project is licensed under the `Apache License Version 2.0` - see the [LICEN
 
 ## Contact
 
-For questions or feedback, please reach out to [alessio.bianchetti@protonmail.com] or open an issue on the repository.
+For questions or feedback, please reach out to [abianche@protonmail.com] or open an issue on the repository.
 
 Happy coding with Nebula! 🌌
 
